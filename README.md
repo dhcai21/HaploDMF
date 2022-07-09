@@ -77,7 +77,7 @@ Options:
     -epo| --epoch INT:                Epoch for training. (default:20) 
     -bs | --batch_size INT:           Batch size for training. (default:1024) 
 
-    CLustering  and reconstruction   
+    Clustering  and reconstruction   
     -al | --algorithm STR:            Algorithm for clustering: Hierarchical(ward) or Kmeans. (default:ward) 
     -d  | --depth INT:                Depth limitation for consensus sequences generated from clusters. (default:5) 
     -c1 | --cluster_thres1 STR:       Threshold 1 of edit distance with the increasing number of clusters. (default:0.95) 
