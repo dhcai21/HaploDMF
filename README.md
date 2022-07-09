@@ -107,8 +107,9 @@ Ending position for reconstructing haplotypes. A large default value is for cove
 
 ## Output Results
 The trained model can be found in the folder "log".
-All consensus sequences of haplotypes are summarized in a file "*_consensus.fasta".
+
 All reconstructed haplotypes (Polished by Medaka) are summarized in a file "*_haplotypes.fasta". Below is an example of three haplotypes.
+
 ```
 >haplotype_0_length_9181_abundance_0.50
 GGTCTCTCTGGTTAGACCAGATCTGAGCCTGGGAGGTCTCTGGCTAACTAGGGAACC...
