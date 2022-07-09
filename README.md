@@ -27,13 +27,13 @@ After cloning this respository, you can use anaconda to install the **haplodmf.y
 
 
 ##### Possible problems
-`'../lib/libcrypto.1.0.0.dylib' (no such file) when using samtools`
+*'../lib/libcrypto.1.0.0.dylib' (no such file) when using samtools
 
 You can use the command:
 
 `ln -s your_conda/rvhaplo/lib/libcrypto.your_exisiting_version.dylib your_conda/rvhaplo/lib/libcrypto.1.0.0.dylib`
 
-`AttributeError: module 'distutils' has no attribute 'version'`
+*AttributeError: module 'distutils' has no attribute 'version'
 
 You can use the command:
 
