@@ -44,7 +44,7 @@ After cloning this respository, you can use anaconda to install the **haplodmf.y
 `cd HaploDMF-main`<BR/>
 `chmod +x haplodmf.sh`
 #### Command
-`Example:   ./haplodmf.sh -i alignment.sam -r reference.fasta -o result -p prefix -t 8`<BR/>
+`Example:   ./haplodmf.sh -i alignment.sam -r reference.fasta -o result -p prefix`<BR/>
 
 ```
 Required arguments:
