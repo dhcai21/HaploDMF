@@ -10,22 +10,32 @@ viral Haplotyps reconstruction from long reads via Deep Matrix Factorization
 * samtools >= 1.4.1
 * [Medaka](https://github.com/nanoporetech/medaka)
 * Pytorch>=1.10.0
-* Required python package: pandas >= 0.18.0 tqdm, scipy
+* Required python package: pysam, sklearn, pandas, tqdm, scipy
 
-#### Install Dependencies
+### An easiler way to install
+
+
+
+#### An optional way to install
 `conda create -n haplodmf python=3.8.13`<BR/>
 `conda activate haplodmf`<BR/>
 `conda install -c bioconda -c conda-forge medaka`<BR/>
 `conda install pytorch=1.10.0=py3.8_cuda11.1_cudnn8.0.5_0 torchvision torchaudio cudatoolkit=11.1 -c pytorch`<BR/>
-`conda install mcl`<BR/>
 `pip install sklearn pandas tqdm`<BR/>
-####
-##### Possible problem
+
+
+##### Possible problems
 `'../lib/libcrypto.1.0.0.dylib' (no such file) when using samtools`
 
 You can use the command:
 
 `ln -s your_conda/rvhaplo/lib/libcrypto.your_exisiting_version.dylib your_conda/rvhaplo/lib/libcrypto.1.0.0.dylib`
+
+`AttributeError: module 'distutils' has no attribute 'version'`
+
+You can use the command:
+
+`pip install setuptools==59.5.0`
 
 ## Usage
 #### Initialization
