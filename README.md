@@ -46,11 +46,6 @@ After cloning this respository, you can use anaconda to install the **haplodmf.y
 #### Command
 `Example:   ./haplodmf.sh -i alignment.sam -r reference.fasta -o result -p prefix -t 8`<BR/>
 
-`If you want to output the SNV sites only:   ./rvhaplo.sh -i alignment.sam -r reference.fasta -os 1`<BR/>
-
-
-`If you have multiple CPU cores, you can set the value of "-t" to accelerate the running.`<BR/>
-
 ```
 Required arguments:
     -i | --input:                     alignment file (sam)
@@ -59,7 +54,6 @@ Required arguments:
 Options:
     -o  | --out:                      Path where to output the results. (default:./result)
     -p  | --prefix STR:               Prefix of output file. (default: rvhaplo)
-    -t  | --thread INT:               Number of CPU cores for multiprocessing. (default:8)
     -is | --input_snv STR:            A file containing a set of SNV sites. (default:None)
     -mq | --map_qual INT:             Smallest mapping quality in the alignment file. (default:0) 
     -sp | --start_pos INT:            Starting position for reconstructing haplotypes (default: 1)
@@ -67,6 +61,7 @@ Options:
     -h  | --help :                    Print help message.
 
     SNV Detection:
+    -t  | --thread INT:               Number of CPU cores for multiprocessing. (default:8)
     -e  | --error_rate FLOAT:         Sequencing error rate. (default: 0.1)
     -s  | --signi_level FLOAT:        Significance level for binomial tests. (default: 0.05)
     -cp | --cond_pro FLOAT:           A threshold of the maximum conditional probability for SNV sites. (default: 0.65)
