@@ -103,7 +103,8 @@ Starting position for reconstructing haplotypes. (1-index)
 Ending position for reconstructing haplotypes. A large default value is for covering the whole genome. (1-index)
 
 
-
+## Run HaploDMF on tested data
+`./haplodmf.sh -i test.sam -r reference.fasta -o test_result -p test`<BR/>
 
 ## Output Results
 The trained model can be found in the folder "log".
@@ -129,9 +130,6 @@ The base (A, C, G, T, etc.) counts from the alignments between reads and the ref
 
 
 ## Simulation data
-Simulation datasets can be downloaded from https://drive.google.com/drive/folders/16azUqV6thGJyBThR0OaGfNgjXYhD_lEE?usp=sharing
-
-## Run HaploDMF on tested data
-`./haplodmf.sh -i test.sam -r reference.fasta -o test_result -p test -t 8`<BR/>
+Simulation datasets can be downloaded from 
 
 
