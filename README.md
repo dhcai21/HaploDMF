@@ -84,9 +84,6 @@ Options:
     -c2 | --cluster_thres2 STR:       Threshold 2 of edit distance with the increasing number of clusters. (default:0.90) 
     -li | --largest_iteration INT:    Largest iteration for clustering. (default:20) 
 ```
-`-t  | --thread`
-
-If you have multiple CPU cores for running the tool, please use this parameter for accelerating the process. The default value is 8 (8 CPU cores).
 
 `-mq  | --map_qual`
 
