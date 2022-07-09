@@ -7,14 +7,16 @@ viral Haplotyps reconstruction from long reads via Deep Matrix Factorization
 ### Dependencies:
 * Conda
 * Python >=3.8.13
-* samtools >= 1.4.1
+* samtools
 * [Medaka](https://github.com/nanoporetech/medaka)
 * Pytorch>=1.10.0
 * Required python package: pysam, sklearn, pandas, tqdm, scipy
 
 ### An easiler way to install
+After cloning this respository, you can use anaconda to install the **haplodmf.yaml**. This will install all packages you need with gpu mode (make sure you have installed cuda on your system to use the gpu version. Othervise, it will run with cpu version). The command is: `conda env create -f haplodmf.yaml -n haplodmf`
 
-
+* For cpu version pytorch: `conda install pytorch torchvision torchaudio cpuonly -c pytorch`
+* For gpu version pytorch: Search [pytorch](https://pytorch.org/) to find the correct cuda version according to your computer
 
 #### An optional way to install
 `conda create -n haplodmf python=3.8.13`<BR/>
@@ -39,10 +41,10 @@ You can use the command:
 
 ## Usage
 #### Initialization
-`cd RVHaplo-main`<BR/>
-`chmod +x rvhaplo.sh`
+`cd HaploDMF-main`<BR/>
+`chmod +x haplodmf.sh`
 #### Command
-`Example:   ./rvhaplo.sh -i alignment.sam -r reference.fasta -o result -p prefix -t 8`<BR/>
+`Example:   ./haplodmf.sh -i alignment.sam -r reference.fasta -o result -p prefix -t 8`<BR/>
 
 `If you want to output the SNV sites only:   ./rvhaplo.sh -i alignment.sam -r reference.fasta -os 1`<BR/>
 
