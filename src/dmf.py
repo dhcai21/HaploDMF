@@ -178,12 +178,13 @@ for i in range(read_num):
 
 read_snv_once = torch.tensor(read_snv_once)
 read_snv_once = read_snv_once#.to(device)
-read_vec,snv_vec,_ = model(read_snv_once[:,0],read_snv_once[:,1])
+read_vec,_,_ = model(read_snv_once[:,0],read_snv_once[:,1])
 
 feature = read_vec.cpu().detach().numpy()
 
 del model
 del fre_mat
+del _
 
 ##### normalize vector
 normalize_feature = []
@@ -199,10 +200,9 @@ def call_consensus(seq_mat,cluster_index,depth=5):
     consensus_flag = {}
     cluster_label = {}
     for key in cluster_index.keys():
-        sub_seq_mat = seq_mat[cluster_index[key]]
         seq = np.array(['0']*snv_num)
         for i in range(snv_num):
-            temp = Counter(sub_seq_mat[:, i])
+            temp = Counter(seq_mat[cluster_index[key]][:, i])
             if '-' in temp.keys():
                 temp['-']=0
             elif '0' in temp.keys():
@@ -225,16 +225,14 @@ def call_consensus(seq_mat,cluster_index,depth=5):
 def max_error_correction(con_seq,con_flag,clus_label,seq_mat,seq_flag,cluster_index):
     total_mec={}
     for key in con_seq.keys():
-        sub_seq_mat = seq_mat[cluster_index[key]]
-        sub_seq_flag = seq_flag[cluster_index[key]]
-        num_temp,_ = sub_seq_mat.shape
+        num_temp,_ = seq_mat[cluster_index[key]].shape
         consensus = con_seq[key]
         consensus_flag = con_flag[key]
         if clus_label[key]:
-            temp_mec = sub_seq_mat!=consensus
+            temp_mec = seq_mat[cluster_index[key]]!=consensus
             info = []
             for i in range(num_temp):
-                compare_flag = np.logical_and(sub_seq_flag[i],consensus_flag)
+                compare_flag = np.logical_and(seq_flag[cluster_index[key]][i],consensus_flag)
                 edit_flag = temp_mec[i][compare_flag]
                 edit = np.count_nonzero(edit_flag)
                 info.append(edit)
