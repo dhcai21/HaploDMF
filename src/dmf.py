@@ -169,9 +169,10 @@ model = eval(f"dmf_model.dfm")(fre_mat=fre_mat, read_mid_dim=64, snv_mid_dim= 12
 del _
 del train_loader
 model.load_state_dict(torch.load(f"{args.o}/log/{log_file_name}/{log_file_name}.pt",map_location=torch.device('cpu')))
+del fre_mat
 
 ####  output learned vector
-read_num,snv_num = fre_mat.shape
+read_num,snv_num = seq_mat.shape
 read_snv_once = []
 for i in range(read_num):
     read_snv_once.append([i,0])
@@ -179,14 +180,13 @@ for i in range(read_num):
 read_snv_once = torch.tensor(read_snv_once)
 read_snv_once = read_snv_once
 read_vec,_,_ = model(read_snv_once[:,0],read_snv_once[:,1])
+del model
+del _
+del read_snv_once
 
 feature = read_vec.cpu().detach().numpy()
 
 del read_vec
-del read_snv_once
-del model
-del fre_mat
-del _
 
 ##### normalize vector
 normalize_feature = []
