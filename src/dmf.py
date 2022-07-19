@@ -177,11 +177,13 @@ for i in range(read_num):
     read_snv_once.append([i,0])
 
 read_snv_once = torch.tensor(read_snv_once)
-read_snv_once = read_snv_once#.to(device)
+read_snv_once = read_snv_once
 read_vec,_,_ = model(read_snv_once[:,0],read_snv_once[:,1])
 
 feature = read_vec.cpu().detach().numpy()
 
+del read_vec
+del read_snv_once
 del model
 del fre_mat
 del _
