@@ -89,6 +89,7 @@ if __name__ == "__main__":
     batch_size = int(args.batch_size)
     # DON'T shuffle the testing datasets
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=1)
+    del train_data
 
 # train function
 def train(args, train_loader, fre_mat,read_mid_dim = 128, snv_mid_dim=256, final_vector = 32):
@@ -165,7 +166,8 @@ def trans(label,num_haplo):
 ### training
 _,log_file_name = train(args = args, train_loader=train_loader, fre_mat = fre_mat, read_mid_dim = 64, snv_mid_dim=128, final_vector = 32)
 model = eval(f"dmf_model.dfm")(fre_mat=fre_mat, read_mid_dim=64, snv_mid_dim= 128, final_vector=32)
-os.system(f"")
+del _
+del train_loader
 model.load_state_dict(torch.load(f"{args.o}/log/{log_file_name}/{log_file_name}.pt",map_location=torch.device('cpu')))
 
 ####  output learned vector
@@ -180,6 +182,8 @@ read_vec,snv_vec,_ = model(read_snv_once[:,0],read_snv_once[:,1])
 
 feature = read_vec.cpu().detach().numpy()
 
+del model
+del fre_mat
 
 ##### normalize vector
 normalize_feature = []
