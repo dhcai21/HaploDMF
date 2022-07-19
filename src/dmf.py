@@ -277,7 +277,7 @@ def find_clusters(args,normalize_feature,seq_mat,seq_flag):
         if thres >args.c1:
             if algorithm == 'ward':
                 clustering = AgglomerativeClustering(n_clusters=num_haplo+step).fit(normalize_feature)
-            elif algorithm == 'kmeans':
+            elif algorithm == 'KMeans':
                 clustering = KMeans(n_clusters=num_haplo+step,random_state=0).fit(normalize_feature)
             else:
                 clustering = AgglomerativeClustering(n_clusters=num_haplo+step).fit(normalize_feature)
