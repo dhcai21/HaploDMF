@@ -46,7 +46,7 @@ pip install sklearn pandas tqdm
 
 ## Usage
 #### Initialization
-`cd HaploDMF-main`<BR/>
+`cd HaploDMF`<BR/>
 `chmod +x haplodmf.sh`
 #### Command
 `Example:   ./haplodmf.sh -i alignment.sam -r reference.fasta -o result -p prefix`<BR/>
