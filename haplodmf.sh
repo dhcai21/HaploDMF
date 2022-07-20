@@ -67,7 +67,7 @@ function help_info() {
 	echo "    -bs | --batch_size INT:           Batch size for training. (default:1024) "
 	echo ""
 	echo "      Clustering  and reconstruction   "
-	echo "    -al | --algorithm STR:            Algorithm for clustering: Hierarchical(ward) or Kmeans. (default:ward) "
+	echo "    -al | --algorithm STR:            Algorithm for clustering: Hierarchical(ward) or kmeans. (default:ward) "
 	echo "    -d  | --depth INT:                Depth limitation for consensus sequences generated from clusters. (default:5) "
 	echo "    -c1 | --cluster_thres1 STR:       Threshold 1 of edit distance with the increasing number of clusters. (default:0.95) "
 	echo "    -c2 | --cluster_thres2 STR:       Threshold 2 of edit distance with the increasing number of clusters. (default:0.90) "
