@@ -19,12 +19,17 @@ After cloning this respository, you can use anaconda to install the **haplodmf.y
 * For gpu version pytorch: Search [pytorch](https://pytorch.org/) to find the correct cuda version according to your computer
 
 #### An optional way to install
-`conda create -n haplodmf python=3.8.13`<BR/>
-`conda activate haplodmf`<BR/>
-`conda install -c bioconda -c conda-forge medaka`<BR/>
-`conda install pytorch=1.10.0=py3.8_cuda11.1_cudnn8.0.5_0 torchvision torchaudio cudatoolkit=11.1 -c pytorch`<BR/>
-`pip install sklearn pandas tqdm`<BR/>
+```
+conda create -n haplodmf python=3.8.13
 
+conda activate haplodmf
+
+conda install -c bioconda -c conda-forge medaka
+
+conda install pytorch=1.10.0=py3.8_cuda11.1_cudnn8.0.5_0 torchvision torchaudio cudatoolkit=11.1 -c pytorch
+
+pip install sklearn pandas tqdm
+```
 
 ##### Possible problems
 * '../lib/libcrypto.1.0.0.dylib' (no such file) when using samtools
