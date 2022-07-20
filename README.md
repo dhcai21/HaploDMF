@@ -1,5 +1,5 @@
 # HaploDMF
-viral Haplotyps reconstruction from long reads via Deep Matrix Factorization
+HaploDMF: viral Haplotype reconstruction from long reads via Deep Matrix Factorization
 
 
 ### E-mail: dhcai2-c@my.cityu.edu.hk
