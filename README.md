@@ -26,7 +26,7 @@ conda activate haplodmf
 
 conda install -c bioconda -c conda-forge medaka
 
-conda install pytorch=1.10.0=py3.8_cuda11.1_cudnn8.0.5_0 torchvision torchaudio cudatoolkit=11.1 -c pytorch
+conda install pytorch torchvision torchaudio cudatoolkit -c pytorch  (Install correct version of pytorch according to your computer)
 
 pip install sklearn pandas tqdm
 ```
