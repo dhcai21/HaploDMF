@@ -110,7 +110,7 @@ Ending position for reconstructing haplotypes. A large default value is for cove
 
 `-a  | --abundance `
 
-This parameter is to filter low-abundance haplotype from the output file. If you use "-a 0.05", then the output file will only contain haplotypes with abundance >= 0.05 (i.e., 5%).
+This parameter is to filter low-abundance haplotype from the output file. If you use "-a 0.05", then the output file will only contain haplotypes with abundance >= 0.05 (i.e., 5%). The default setting will keep all the haplotypes in the file. And the output file contains information including number of reads, depth, abundance for each haplotype. 
 
 
 ## Run HaploDMF on tested data
