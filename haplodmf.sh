@@ -49,7 +49,7 @@ function help_info() {
 	echo "    -mq | --map_qual INT:             Smallest mapping quality in the alignment file. (default:0) "
 	echo "    -sp | --start_pos INT:            Starting position for reconstructing haplotypes (default: 1)"
 	echo "    -ep | --end_pos INT:              Ending position for reconstructing haplotypes (default: 1e10)"
-	echo "    -a  | --abundance INT:            Filter haplotypes with abundance less than a threshold (default: 0)"
+	echo "    -a  | --abundance FLOAT:          Filter haplotypes with abundance less than a threshold (default: 0)"
 	echo "    -h  | --help :                    Print help message."
 	echo ""
 	echo "        SNV Detection         "
