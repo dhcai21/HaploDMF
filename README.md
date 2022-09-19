@@ -63,7 +63,7 @@ Options:
     -mq | --map_qual INT:             Smallest mapping quality in the alignment file. (default:0) 
     -sp | --start_pos INT:            Starting position for reconstructing haplotypes (default: 1)
     -ep | --end_pos INT:              Ending position for reconstructing haplotypes (default: 1e10)
-    -a  | --abundance Float:          Filter haplotypes with abundance less than a threshold (default: 0)
+    -a  | --abundance FLOAT:          Filter haplotypes with abundance less than a threshold (default: 0)
     -h  | --help :                    Print help message.
 
     SNV Detection:
@@ -107,6 +107,10 @@ Starting position for reconstructing haplotypes. (1-index)
 `-ep  | --end_pos`
 
 Ending position for reconstructing haplotypes. A large default value is for covering the whole genome. (1-index)
+
+`-a  | --abundance `
+
+This parameter is to filter low-abundance haplotype from the output file. If you use "-a 0.05", then the output file will only contain haplotypes with abundance >= 0.05 (i.e., 5%).
 
 
 ## Run HaploDMF on tested data
