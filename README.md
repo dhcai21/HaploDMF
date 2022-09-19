@@ -63,6 +63,7 @@ Options:
     -mq | --map_qual INT:             Smallest mapping quality in the alignment file. (default:0) 
     -sp | --start_pos INT:            Starting position for reconstructing haplotypes (default: 1)
     -ep | --end_pos INT:              Ending position for reconstructing haplotypes (default: 1e10)
+    -a  | --abundance Float:          Filter haplotypes with abundance less than a threshold (default: 0)
     -h  | --help :                    Print help message.
 
     SNV Detection:
