@@ -135,6 +135,8 @@ The batch size for training. If the memory of your device is small, you can redu
 
 `-al | --algorithm`
 
+The default algorithm for cluster reads is hierarchical clustering (Ward's method). Because hierarchical clustering is time-comsumming when the dataset is large, we provide alternative clustering algorithm "KMEAMS". According to our expriments, the clustering results between these two methods are similar.
+
 `-d | --depth`
 
 The depth limitation for generating a consensus sequences. Because consensus sequence contains more errors in the ending regions due to the small depth, we set a threshold of depth to remove these regions when calculating the distance between reads and consensus sequences for determing the number of clusters. As the depth is small, removing these regions will not affect the final number of clusters. 
