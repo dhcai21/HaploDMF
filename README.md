@@ -112,6 +112,43 @@ Ending position for reconstructing haplotypes. A large default value is for cove
 
 This parameter is to filter low-abundance haplotype from the output file. If you use "-a 0.05", then the output file will only contain haplotypes with abundance >= 0.05 (i.e., 5%). The default setting will keep all the haplotypes in the file. And the output file contains information including number of reads, depth, abundance for each haplotype. 
 
+`SNV detection`
+
+Please refer to [RVHaplo](https://github.com/dhcai21/RVHaplo)
+
+`-w  | --weight`
+
+There are two losses in HaploDMF. Minimizing loss1 learns latent features of reads so that reads sharing more SNVs have similar latent features. Loss2 is to help learn latent features for distant SNV sites. If the distant SNV sites contains SNVs from the some haplotypes, latent features of distant reads (without overlap) can be better generate. Because loss1 is the main loss to learn the latent features, we assign a large weight to it and a small weight to loss2. Here, -w/--weight is to assign the weight to loss2. According to our experiments, we suggest select a value between (0,0.2]. If the coverage of your data is large and without drop off in the middle, this parameter will not affect the result significantly. 
+
+
+`-lr  | --learning_rate`
+
+The learning rate when training the neural network. 
+
+`-epo  | --epoch`
+
+The epoch for training. As the training process can converge fast, we use a small epoch here to reduce the training time. 
+
+`-bs | --batch_size`
+
+The batch size for training. If the memory of your device is small, you can reduce the batch size.
+
+`-al | --algorithm`
+
+`-d | --depth`
+
+The depth limitation for generating a consensus sequences. Because consensus sequence contains more errors in the ending regions due to the small depth, we set a threshold of depth to remove these regions when calculating the distance between reads and consensus sequences for determing the number of clusters. As the depth is small, removing these regions will not affect the final number of clusters. 
+
+`-c1 | --cluster_thres1`
+
+We use "elbow method" to determine the number of clusters. If the number of different bases between reads and their consensus sequences do not change significantly (e.g., > 0.95) with the increasing number of clusters, the iteration will stop. 
+
+`-c2 | --cluster_thres2`
+Because the number of different bases may not decrease significantly at the beginning iteration when the sequencing error rate is high, we use this threshold to double check the trend of different bases with the increasing number of clusters. For further details, please refer to the supplementary file.
+
+`-li | --largest_iteration`
+
+Because the high values of "-c1" and "-c2" may not be able to stop the iteration, we set a largest iteration to avoid the infinite iteration. This value should be large than the number of haplotypes. Usually, the default value (20) is suitable to most datasets.
 
 ## Run HaploDMF on tested data
 `./haplodmf.sh -i test.sam -r reference.fasta -o test_result -p test`<BR/>
