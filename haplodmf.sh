@@ -75,7 +75,7 @@ function help_info() {
 	echo "    -c2 | --cluster_thres2 STR:       Threshold 2 of edit distance with the increasing number of clusters. (default:0.90) "
 	echo "    -li | --largest_iteration INT:    Largest iteration for clustering. (default:20) "
 	echo ""
-	echo "    For further details of above arguments, please refer to xxxx   "
+	echo "    For further details of above arguments, please refer to https://github.com/dhcai21/HaploDMF   "
 	echo ""
 	exit 1
 }
