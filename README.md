@@ -91,6 +91,15 @@ Options:
     -li | --largest_iteration INT:    Largest iteration for clustering. (default:20) 
 ```
 
+In HaploDMF, there are several groups of parameters with different purposes: parameters for detecting SNV sites, training the neural network, and clustering. Most of these parameters are provided for other developers who might want to modify our codes for other purposes.
+
+Only the following parameters may affect the result:
+1. In the training process, we used loss2 to help learn latent features between distant reads. When the sequencing coverage is large, loss2 will not affect the result significantly. Thus, the parameter of controlling the weights between two losses is not sensitive when the sequencing coverage is high. When the coverage is low, loss2’s weight can be set to 0.1-0.2. 
+2. We used the “elbow method” to determine the number of clusters (haplotypes). Empirically, using the default values is suitable for most cases. Stringent values may output a few repetitive haplotypes with low abundance while relaxed values may miss the low-abundant haplotypes. But users can adjust the parameters according to the abundance of haplotypes, number of reads supporting haplotypes, etc., which are provided in the output file.
+
+
+
+
 `-mq  | --map_qual`
 
 If you want to filter some reads with small mapping qualities, you can use this parameter (e.g., 20). When you data have a large number of reads, you can use this parameter to remove some bad-quality reads. This will help accelerate the running.
