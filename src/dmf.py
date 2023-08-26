@@ -148,11 +148,6 @@ def train(args, train_loader, fre_mat,read_mid_dim = 128, snv_mid_dim=256, final
     print(f"Training time: {(train_e_time - train_s_time) / 60 :.2f} min.")
     # save the model to the log file
     torch.save(model.state_dict(), f"{args.o}/log/{log_file_name}/{log_file_name}.pt")
-    # the time of ending training
-    train_e_time = time.time()
-    print(f"Training time: {(train_e_time - train_s_time) / 60 :.2f} min.")
-    # save the model to the log file
-    torch.save(model.state_dict(), f"{args.o}/log/{log_file_name}/{log_file_name}.pt")
     return model,log_file_name
 
 def trans(label,num_haplo):
