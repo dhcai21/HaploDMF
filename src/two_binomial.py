@@ -5,6 +5,8 @@ import concurrent.futures
 import numpy as np
 from scipy import stats
 import numpy as np
+import multiprocessing as mp
+mp.set_start_method("fork")
 
 #### input parameters
 error = float(sys.argv[1])
