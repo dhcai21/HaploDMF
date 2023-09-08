@@ -5,6 +5,8 @@ import pickle
 import time
 import concurrent.futures
 from tqdm import tqdm
+import multiprocessing as mp
+mp.set_start_method("fork")
 ### load data
 file_in=sys.argv[1]  
 file_snv = sys.argv[2] 
