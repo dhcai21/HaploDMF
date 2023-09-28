@@ -9,7 +9,7 @@
 * Conda
 * Python >=3.8.13
 * samtools
-* [Medaka](https://github.com/nanoporetech/medaka)
+* [Medaka](https://github.com/nanoporetech/medaka) >=1.6.0
 * Pytorch>=1.10.0
 * Required python package: pysam, sklearn, pandas, tqdm, scipy
 
