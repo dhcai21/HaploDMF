@@ -482,7 +482,7 @@ if [[ "$input_snv" == "None" ]];then
 	## judge number of detected SNV sites
 	size="$(wc -l <"$file_snv")"
 	size="${size:0-1:1}"
-	if [[ $size != "0" ]];then
+	if (( $size != 0 ));then
 		python ./src/out_haplotypes.py $prefix $file_bam_sorted $file_path 1 $s_pos $e_pos $abundance
 		python ./src/extract_reads.py $file_path $prefix 1
 		python ./src/run_medaka.py $file_path $prefix 1
@@ -499,7 +499,7 @@ python ./src/fre_matrix.py $file_bam_sorted $file_snv $file_prefix $cond_pro $sm
 ######### check the number of SNV sites ########
 size="$(wc -l <"$file_snv")"
 size="${size:0-1:1}"
-if [[ $size != "0" ]];then
+if (( $size != 0 ));then
 	python ./src/out_haplotypes.py $prefix $file_bam_sorted $file_path 1 $s_pos $e_pos $abundance
 	python ./src/extract_reads.py $file_path $prefix 1
 	python ./src/run_medaka.py $file_path $prefix 1
