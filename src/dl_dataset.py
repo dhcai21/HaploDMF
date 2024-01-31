@@ -16,9 +16,7 @@ class fre_coding(data.Dataset):
         return len(self.read_id)
     
     def __getitem__(self, index):
-        read_snv = np.array([self.read_id[index],self.snv_id[index],], dtype=np.int)
-#        ref_snv = np.array([i for i in range(self.snv_num) if i != self.snv_id[index]],dtype=np.int)
+        read_snv = np.array([self.read_id[index],self.snv_id[index],], dtype=int)
         fre = self.fre_mat[self.read_id[index],self.snv_id[index]]
-#        return read_snv,fre,ref_snv
         return read_snv,fre
 
